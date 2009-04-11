@@ -1,8 +1,14 @@
 TextMate Flash Bundle
 =====================
 
-A TextMate bundle for working with the Adobe Flash Player and Authoring Environment.
+A TextMate bundle for working with the Adobe Flash Player and Authoring Environment. This bundle started life as the Javascript Flash bundle.
 
+Features:
+
+ * Javascript Flash Support. JSFL is a JavaScript API used to automate the Adobe Flash Authoring Environment.
+ * Flash Player Detection.
+ * Flash Cookie (.sol files) conversion.
+ 
 Installation
 ------------
 

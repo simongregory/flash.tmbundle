@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>echo "flash.getDocumentDOM().testMovie()" &gt; /tmp/test.jsfl;
+open /tmp/test.jsfl;</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Publish</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.actionscript</string>
+	<key>uuid</key>
+	<string>536DE05E-DAB6-4009-A9C8-B72F4AFB9605</string>
+</dict>
+</plist>
