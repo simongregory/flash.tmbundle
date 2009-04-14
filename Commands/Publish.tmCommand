@@ -5,15 +5,26 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>echo "flash.getDocumentDOM().publishMovie()" &gt; /tmp/publish.jsfl;
-open /tmp/publish.jsfl;
-</string>
+	<string>#!/usr/bin/env ruby
+
+require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
+require ENV['TM_BUNDLE_SUPPORT'] + '/lib/flash_mate'
+
+puts html_head( :window_title =&gt; "Flash Publish", 
+                 :page_title =&gt; "Publish" )
+
+fm = FlashMate.new
+fm.publish
+
+html_footer</string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@B</string>
 	<key>name</key>
 	<string>Publish</string>
 	<key>output</key>
-	<string>discard</string>
+	<string>showAsHTML</string>
 	<key>scope</key>
 	<string>source.actionscript</string>
 	<key>uuid</key>

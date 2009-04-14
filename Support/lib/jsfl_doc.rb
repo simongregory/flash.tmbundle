@@ -8,8 +8,8 @@ class JSFLDoc
   
   def initialize()
     
-    @path = '/tmp/flash_mate.jsfl'
-    @log = '/tmp/flash_mate.log'
+    @path = '/tmp/flash_mate.' + Time.now.to_i.to_s + '.jsfl'
+    @log = '/tmp/flash_mate.' + Time.now.to_i.to_s + '.log'
     
     @content = []
     
