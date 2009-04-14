@@ -6,7 +6,16 @@
 	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>echo "flash.getDocumentDOM().testMovie()" &gt; /tmp/test.jsfl;
-open /tmp/test.jsfl;</string>
+open /tmp/test.jsfl;
+
+#TM_FLASH_APP="/Applications/Adobe Flash CS3/Adobe Flash CS3.app"
+
+#if [[ -d "$TM_FLASH_APP" ]]; then
+#	echo "document.testMovie();" &amp;gt; /tmp/flash_compile.jsfl
+#	open /tmp/flash_compile.jsfl -a "$TM_FLASH_APP"
+#else
+#	exit_show_tool_tip "Flash missing, it needs to be here: $TM_FLASH_APP"
+#fi</string>
 	<key>input</key>
 	<string>none</string>
 	<key>name</key>
