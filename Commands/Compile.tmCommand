@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
+require ENV['TM_BUNDLE_SUPPORT'] + '/lib/flash_mate'
+
+puts html_head( :window_title =&gt; "Flash Compile", 
+                 :page_title =&gt; "Compile" )
+
+fm = FlashMate.new
+fm.compile
+
+html_footer</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@B</string>
+	<key>name</key>
+	<string>Compile</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.actionscript</string>
+	<key>uuid</key>
+	<string>A1A227EC-EE43-4C49-8C37-A8E80B4A08EF</string>
+</dict>
+</plist>

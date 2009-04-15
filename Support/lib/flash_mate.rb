@@ -69,6 +69,8 @@ class FlashMate
     execute
   end
   
+  private
+
   # Run the currently configured JSFLDoc.
   #
   def execute
@@ -120,8 +122,6 @@ class FlashMate
    
   end
   
-  private
-  
   # Display command line useage information (if a cli is ever implemented).
   #
   # http://optiflag.rubyforge.org/why.html#one.4
@@ -159,8 +159,6 @@ if __FILE__ == $0
   #fm.publish
   fm.to_s
 
-  #fm.execute
-  
   #`mate #{fm.jsfl.path}`
   
 end
