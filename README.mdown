@@ -9,6 +9,11 @@ Features:
  * Flash Player Detection.
  * Flash Cookie (.sol files) conversion.
  
+Experimental Branch
+-------------------
+
+Of 'master' with barebones support for the FXG document type. See [FXG+1.0+Specification](http://opensource.adobe.com/wiki/display/flexsdk/FXG+1.0+Specification) for more info.
+ 
 Installation
 ------------
 

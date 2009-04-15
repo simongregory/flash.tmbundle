@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby -wKU
 
-require 'flash_app'
-require 'jsfl_doc'
+SUPPORT = 
+BUNDLE_LIB = File.expand_path(File.dirname(__FILE__))
+
+require BUNDLE_LIB + '/flash_app'
+require BUNDLE_LIB + '/flash_exhaust'
+require BUNDLE_LIB + '/jsfl_doc'
 
 # Ruby interface for Flash.
 #
@@ -10,6 +14,7 @@ class FlashMate
   VERSION = "0.0.1"
   
   attr_reader :flash, :jsfl, :timeout
+
   attr_accessor :fla, :swf
   
   def initialize
@@ -21,6 +26,7 @@ class FlashMate
     @src     = ''
     @swf     = ''
     @fla     = ''
+    @verbose = false
     
   end
   
@@ -49,12 +55,18 @@ class FlashMate
     puts "FlashMate #{VERSION}"
   end
   
+  # Create a jsfl test document and execute it.
+  #  
   def test
     jsfl.test
+    execute
   end
-
+  
+  # Create a jsfl publish document and execute it.
+  #
   def publish
     jsfl.publish
+    execute
   end
   
   # Run the currently configured JSFLDoc.
@@ -64,7 +76,7 @@ class FlashMate
    sh = "osascript -e 'tell application \"#{flash.name}\" to open posix file \"#{jsfl.path}\"'"
    
    puts "Calling Flash"
-   puts "Executing Command : " + sh
+   puts "Executing Command : #{sh}" if @verbose
    
    `#{sh}`
    
@@ -76,7 +88,7 @@ class FlashMate
      break if File.exist?(jsfl.log)
      
      if counter >= timeout
-       print "Timeout waiting for Flash to respond (#{counter} Seconds)"
+       print "Timeout waiting for Flash to respond (#{counter} Seconds)<br/>"
        break
      end
      
@@ -85,20 +97,26 @@ class FlashMate
      
    end
    
-   puts ""
-   puts "Checking Flash Output"
+   puts "<br/>"
+   puts "Checking Flash Output<br/>"
    
    begin
-     IO.foreach(jsfl.log) do |line|
-       puts line
-      end     
+     
+     exhaust = FlashExhaust.new
+
+     IO.foreach(jsfl.log, "\r") do |line|
+       exhaust.line(line)
+     end
+     
+     exhaust.complete
+     
    rescue Exception => e
-     puts "Error manipulating log file."
-     puts "Exiting"
+     puts "Error manipulating log file.<br/> #{e}"
+     puts "Exiting.<br/>"
    end
 
-   #File.delete(jsfl.path)   
-   #File.delete(jsfl.log)
+   File.delete(jsfl.path)
+   File.delete(jsfl.log)
    
   end
   
@@ -137,11 +155,11 @@ if __FILE__ == $0
   fm.fla = "/Users/simon/Desktop/tst/Test.fla"
   fm.swf = "/Users/simon/Desktop/tst/bin/Test.swf"
 
-  # fm.test
-  fm.publish
+  #fm.test
+  #fm.publish
   fm.to_s
 
-  fm.execute
+  #fm.execute
   
   #`mate #{fm.jsfl.path}`
   

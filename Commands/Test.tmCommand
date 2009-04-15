@@ -5,23 +5,35 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string>echo "flash.getDocumentDOM().testMovie()" &gt; /tmp/test.jsfl;
-open /tmp/test.jsfl;
+	<string>#!/usr/bin/env ruby
 
-#TM_FLASH_APP="/Applications/Adobe Flash CS3/Adobe Flash CS3.app"
+require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
+require ENV['TM_BUNDLE_SUPPORT'] + '/lib/flash_mate'
+
+puts html_head( :window_title =&gt; "Flash Test", 
+                 :page_title =&gt; "Test" )
+
+fm = FlashMate.new
+fm.publish
+
+html_footer
 
 #if [[ -d "$TM_FLASH_APP" ]]; then
 #	echo "document.testMovie();" &amp;gt; /tmp/flash_compile.jsfl
 #	open /tmp/flash_compile.jsfl -a "$TM_FLASH_APP"
 #else
 #	exit_show_tool_tip "Flash missing, it needs to be here: $TM_FLASH_APP"
-#fi</string>
+#fi
+
+</string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>@B</string>
 	<key>name</key>
 	<string>Test</string>
 	<key>output</key>
-	<string>discard</string>
+	<string>showAsHTML</string>
 	<key>scope</key>
 	<string>source.actionscript</string>
 	<key>uuid</key>
