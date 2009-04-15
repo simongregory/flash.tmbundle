@@ -69,6 +69,25 @@ class FlashMate
     execute
   end
   
+  # Compiles the fla specified by TM_FLA.
+  #
+  def compile
+
+    fla = ENV['TM_FLA'] || nil
+    swf = ENV['TM_SWF'] || swf_from_fla(fla)
+
+    if File.exists?(fla.to_s)
+      jsfl.compile(fla,swf)
+      execute      
+    else
+      puts "<h2>Error</h2><p>Please specify the fla document you wish to compile using the environment variable <code>$TM_FLA</code>.
+			<br>
+			<br>
+			Configuration help can be found <a href=\"tm-file://#{ENV['TM_BUNDLE_SUPPORT']}/html/help.html#conf\">here.</a></p>"
+    end
+        
+  end
+  
   private
 
   # Run the currently configured JSFLDoc.
@@ -120,6 +139,13 @@ class FlashMate
    File.delete(jsfl.path)
    File.delete(jsfl.log)
    
+  end
+  
+  # Calculate the name of the swf from the fla.
+  #
+  def swf_from_fla(path)
+    return nil if path.nil?
+    path.sub(/\.fla$/,',swf')
   end
   
   # Display command line useage information (if a cli is ever implemented).
