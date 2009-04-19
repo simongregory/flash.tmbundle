@@ -12,13 +12,11 @@ require ENV["TM_SUPPORT_PATH"] + '/lib/web_preview'
 
 html_header "Flash Player Version"
 
-so_path = "#{ENV['TM_BUNDLE_SUPPORT']}/js/swfobject.js"
-swf_obj= e_url(so_path)
-puts "&lt;script src=\"file://#{swf_obj}\" type=\"text/javascript\" charset=\"utf-8\"&gt;&lt;/script&gt;"
+swf_obj = e_url "#{ENV['TM_BUNDLE_SUPPORT']}/js/swfobject.js"
 
-puts "&lt;div id=\"flashversion\"&gt;You do not have the Flash plugin installed, or your browser does not support Javascript (you should enable it, perhaps?)&lt;/div&gt;"
-
-puts "&lt;script type=\"text/javascript\"&gt;writeVersionToElement(\"flashversion\");&lt;/script&gt;"
+puts "&lt;script src='file://#{swf_obj}' type='text/javascript' charset='utf-8'&gt;&lt;/script&gt;
+&lt;div id='flashversion'&gt;You do not have the Flash plugin installed.&lt;/div&gt;
+&lt;script type='text/javascript'&gt;writeVersionToElement('flashversion');&lt;/script&gt;"
 
 html_footer
 </string>
