@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+# encoding: utf-8
 
 SUPPORT = 
 BUNDLE_LIB = File.expand_path(File.dirname(__FILE__))

@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+# encoding: utf-8
 
 # Object respresenting a JavaScript Flash Document.
 #
