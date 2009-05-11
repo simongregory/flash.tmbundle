@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -w
+# encoding: utf-8
 
 # Parses output from the Flash compiler and html formats it for use with the
 # TextMate HTML output window.

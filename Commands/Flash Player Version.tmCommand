@@ -23,7 +23,7 @@ html_footer
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
-	<string>$</string>
+	<string></string>
 	<key>name</key>
 	<string>Flash Player Version</string>
 	<key>output</key>

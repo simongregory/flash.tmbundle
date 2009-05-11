@@ -8,6 +8,8 @@
 	<string>open -a Finder "/Users/$USER/Library/Caches/Adobe/Flash Player/AssetCache/"</string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string></string>
 	<key>name</key>
 	<string>Open Runtime Shared Library Cache</string>
 	<key>output</key>

@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby -wKU
+# encoding: utf-8
 
 # Object respresenting a JavaScript Flash Document.
 #
@@ -54,13 +54,17 @@ class JSFLDoc
     to_file
   end
   
-  # Compile the requested Fla.
+  # Compile the requested Fla using the current publish settings.
   #
   def compile(src,swf)
+    header
+    clear_panels    
     @content << "var sourceFile = \"#{e_uri(src)}\";"
     @content << "var outputFile = \"#{e_uri(swf)}\";"
     @content << "var doc = fl.openDocument(sourceFile);"
     @content << "doc.exportSWF(outputFile, true);"
+    write_log
+    to_file
   end  
   
   # Experiment to find out if it is possible to dynamically create a fla, set the
