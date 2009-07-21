@@ -16,7 +16,8 @@ swf_obj = e_url "#{ENV['TM_BUNDLE_SUPPORT']}/js/swfobject.js"
 
 puts "&lt;script src='file://#{swf_obj}' type='text/javascript' charset='utf-8'&gt;&lt;/script&gt;
 &lt;div id='flashversion'&gt;You do not have the Flash plugin installed.&lt;/div&gt;
-&lt;script type='text/javascript'&gt;writeVersionToElement('flashversion');&lt;/script&gt;"
+&lt;script type='text/javascript'&gt;writeVersionToElement('flashversion');&lt;/script&gt;
+&lt;br/&gt;&lt;p&gt;More info can be found at &lt;a href='http://playerversion.com/'&gt;here&lt;/a&gt;.&lt;/p&gt;"
 
 html_footer
 </string>
