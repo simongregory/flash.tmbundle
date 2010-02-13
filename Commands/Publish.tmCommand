@@ -20,7 +20,7 @@ html_footer</string>
 	<key>input</key>
 	<string>none</string>
 	<key>keyEquivalent</key>
-	<string>@B</string>
+	<string>~@b</string>
 	<key>name</key>
 	<string>Publish</string>
 	<key>output</key>
