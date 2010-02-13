@@ -81,9 +81,9 @@ class FlashMate
       execute      
     else
       puts "<h2>Error</h2><p>Please specify the fla document you wish to compile using the environment variable <code>$TM_FLA</code>.
-			<br>
-			<br>
-			Configuration help can be found <a href=\"tm-file://#{ENV['TM_BUNDLE_SUPPORT']}/html/help.html#conf\">here.</a></p>"
+      <br>
+      <br>
+      Configuration help can be found <a href=\"tm-file://#{ENV['TM_BUNDLE_SUPPORT']}/html/help.html#conf\">here.</a></p>"
     end
         
   end
@@ -136,8 +136,8 @@ class FlashMate
      puts "Exiting.<br/>"
    end
 
-   File.delete(jsfl.path)
-   File.delete(jsfl.log)
+   File.delete(jsfl.path) rescue nil
+   File.delete(jsfl.log) rescue nil
    
   end
   
@@ -177,9 +177,11 @@ end
 
 if __FILE__ == $0
   
+  tp = File.expand_path(File.dirname(__FILE__)+'/../../Test')
+  
   fm = FlashMate.new
-  fm.fla = "/Users/simon/Desktop/tst/Test.fla"
-  fm.swf = "/Users/simon/Desktop/tst/bin/Test.swf"
+  fm.fla = "#{tp}/Test.fla"
+  fm.swf = "#{tp}/bin/Test.swf"
 
   #fm.test
   #fm.publish
