@@ -1,46 +1,77 @@
 TextMate Flash Bundle
 =====================
 
-A TextMate bundle for working with the Adobe Flash Player and Authoring Environment. This bundle started life as the Javascript Flash bundle.
+A TextMate bundle for working with the Adobe [Flash Player][adobe_flash] and [Authoring Environment][adobe_flash_tool].
+This bundle started life as the [Javascript Flash bundle][js_flash_bundle].
 
 Features:
 
  * Javascript Flash Support. JSFL is a JavaScript API used to automate the Adobe Flash Authoring Environment.
  * Flash Player Detection.
  * Flash Cookie (.sol files) conversion.
- 
+
 Installation
 ------------
+
+Via download:
+
+ * Open this [link][flash_bundle_zip]  
+ * Unzip the download  
+ * Rename the folder to Flash.tmbundle  
+ * Double-click  
+ * TextMate handles the rest!  
 
 To install via Git:
 
 		cd ~/"Library/Application Support/TextMate/Bundles/"
-		git clone git://github.com/simongregory/flash-tmbundle.git "Flash.tmbundle"
+		git clone git://github.com/simongregory/flash-tmbundle.git Flash.tmbundle
 		osascript -e 'tell app "TextMate" to reload bundles'
+		
+Usage
+-----
 
-Source can be viewed or forked via GitHub: [http://github.com/simongregory/flash-tmbundle/tree/master](http://github.com/simongregory/flash-tmbundle/tree/master)
+### Run ( ⌘R)
+
+Executes the current jsfl document.
+
+### Compile (⌥⌘B)
+
+Compile the Fla. document specified by the environmental variable `TM_FLA` using the current publish settings.
+
+### Test (⌥⌘B)
+
+Test the Fla. document currently active in the Flash authoring tool.
+
+### Publish (⌥⌘B)
+
+Publish the Fla. document currently active in the Flash authoring tool.
 
 Conventions
 -----------
 
-For Bundle Conventions please follow the TextMate conventions outlined [here](http://svn.textmate.org/trunk/Conventions.txt).
+Bundle authorship uses the [TextMate conventions][tm_conventions]. 
 
 Support
 -------
 
-Please use the TextMate Users mailing list [http://lists.macromates.com/listinfo/textmate](http://lists.macromates.com/listinfo/textmate).
+ * [Issue tracker][issue_tracker]
+ * [Repository][repo]
+
+For general questions please use the [TextMate Users mailing list][tm_mailing_list].
+Bugs and issues should be reported via the [issue tracker][issue_tracker].
+Source can be viewed and forked via the [GitHub repository][repo].
 
 Maintainer
 ----------
 
-[Simon Gregory](http://blog.simonregory.com)
+[Simon Gregory][sg_blog]
 
 License
 -------
 
 If not otherwise specified (see below), files in this project fall under the following license:
 
-		Copyright 2009 Simon Gregory
+		Copyright 2009-2010 Simon Gregory
 
 		Permission is hereby granted, free of charge, to any person obtaining a copy
 		of this software and associated documentation files (the "Software"), to deal
@@ -61,3 +92,15 @@ If not otherwise specified (see below), files in this project fall under the fol
 		THE SOFTWARE.
 
 An exception is made for files in readable text which contain their own license information, or files where an accompanying file exists (in the same directory) with a “-license” suffix added to the base-name name of the original file, and an extension of txt, html, or similar.
+
+[flash_bundle_zip]: http://github.com/simongregory/flash.tmbundle/zipball/master
+[issue_tracker]: http://github.com/simongregory/flash.tmbundle/issues
+[repo]: http://github.com/simongregory/flash.tmbundle/
+[sg_blog]: http://blog.simonregory.com
+[tm_conventions]: http://svn.textmate.org/trunk/Conventions.txt
+[tm_env_vars]: http://manual.macromates.com/en/environment_variables
+[tm_mailing_list]: http://lists.macromates.com/listinfo/textmate
+[js_flash_bundle]: http://github.com/textmate/javascript-flash.tmbundle
+[adobe_flash]: http://www.adobe.com/products/flashplayer/
+[adobe_flash_tool]: http://www.adobe.com/products/flash/
+
