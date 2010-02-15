@@ -16,7 +16,7 @@ puts html_head( :window_title =&gt; "Flash Test",
                  :page_title =&gt; "Test" )
 
 fm = FlashMate.new
-fm.publish
+fm.test
 
 html_footer</string>
 	<key>input</key>
