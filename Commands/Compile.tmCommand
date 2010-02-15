@@ -10,6 +10,8 @@
 require ENV['TM_SUPPORT_PATH'] + '/lib/web_preview'
 require ENV['TM_BUNDLE_SUPPORT'] + '/lib/flash_mate'
 
+STDOUT.sync = true
+
 puts html_head( :window_title =&gt; "Flash Compile", 
                  :page_title =&gt; "Compile" )
 
