@@ -84,6 +84,8 @@ if __FILE__ == $0
   exhaust.line('**Error** /Users/simon/Desktop/tst/src/Test.as, Line 23: 1084: Syntax error: expecting rightparen before end of program.')
   exhaust.line('**Error** /Users/simon/Desktop/tst/src/Test.as, Line 17: 1180: Call to a possibly undefined method blah.')
   exhaust.line('     blah()')
+  #TODO: Following line fails.
+  exhaust.line('**Error** Scene 1, Layer \'Layer 1\', Frame 1, Line 1: 1067: Implicit coercion of a value of type String to an unrelated type Number.')
   exhaust.line('Total ActionScript Errors: 1,  Reported Errors: 1')
   
   exhaust.complete
