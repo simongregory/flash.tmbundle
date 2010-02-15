@@ -38,6 +38,7 @@ class JSFLDoc
   def test
     header
     clear_panels
+    @content << "//Flashmate test."
     @content << "var doc = fl.getDocumentDOM();"
     @content << "doc.testMovie();"
     write_log
@@ -49,6 +50,7 @@ class JSFLDoc
   def publish
     header
     clear_panels
+    @content << "//Flashmate publish."
     @content << "fl.getDocumentDOM().publish();"
     write_log
     to_file
@@ -58,7 +60,8 @@ class JSFLDoc
   #
   def compile(src,swf)
     header
-    clear_panels    
+    clear_panels
+    @content << "//Flashmate compile."
     @content << "var sourceFile = \"#{e_uri(src)}\";"
     @content << "var outputFile = \"#{e_uri(swf)}\";"
     @content << "var doc = fl.openDocument(sourceFile);"
@@ -72,9 +75,10 @@ class JSFLDoc
   #
   def create_fla
 
-    @content << "var doc = fl.createDocument();"    
+    @content << "//Flashmate create fla."
+    @content << "var doc = fl.createDocument();"
 
-    @content << "fl.as3PackagePaths = \".;/test/path/to/src\";" 
+    @content << "fl.as3PackagePaths = \".;/test/path/to/src\";"
     @content << "fl.trace(fl.as3PackagePaths);"
     
     @content << "doc.docClass = \"Test\""
